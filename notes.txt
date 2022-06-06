@@ -1,0 +1,116 @@
+npx create-react-app jc2002-react-basics
+
+project sebuah node js kita disimpan di dalam sebuah package manager bernama npm
+gunanya untuk manage project kita
+project web,backend
+npm = NPM merupakan package manager default dari Node. 
+Package manager selain NPM yang sangat populer dan banyak digunakan yaitu Yarn. 
+Anda dapat menggunakan salah satu, tapi tutorial disini saya akan menggunakan NPM secara default.
+
+
+Npm is a tool that use to install packages. 
+Npx is a tool that use to execute packages
+ 
+Npm adalah singkatan dari… node package manager.
+ Terus kegunaannya apaan? Nah kegunaan npm adalah untuk ya dari namanya, package manager,
+ untuk me-manage package. Jadi dengan npm kita bisa menginstall library atau package, 
+sama saja ya library sama package, kita bisa menginstall library, 
+kita bisa nge-run script di dalam library kita.
+
+cek npm dengan npm --version
+jalankan library kita dengan menggunakan
+npx create-react-app <nama project kita>
+
+maka dgn otomatis akan membuat sebuah project react ,
+react app adalah sebuah tools yang bantu kita men-setup project kita
+otomatis
+
+package.json untuk menyimpan data, data dari project kita. 
+mulai dari nama project,versi, dan list dependencies yg digunakan
+apa itu list dependencies? library2 yang kita install dalam project kita
+library yang terpenting adalah react dom dan react script
+
+package/library kita disimpan dimana? terdapat di folder node modules kita. 
+jadi intinya node modules ini adalah kumpulan library yang akan kita gunakan
+
+kita check folder public, ada sebuah index.html dan hanya 1-1nya file html
+kita check div dengan id root
+dalan div ini lah kita akan menampilkan ui dalam aplikasi kita. 
+jika hanya 1 html, gimana kita ganti page? 
+dapat diilustrasikan bahwa kita mengakses element id si root ini
+jadi kita mengganti isi dari element root ini juga,
+sehingga isinya dapat berganti-ganti
+dan lebih baik jangan terlalu diubah file htmlnya karena sudah dibuat sedemikian rupa
+
+manifest sekedar informasi terhadap project kita,
+
+robots.txt? kita harus mengetahui sebuah mesin crawler 
+contohnya search engine dari google
+jadi intinya pada robots.txt ini kita dapat memberi tahu
+crawler mesin URL mana yang dapat diakses di situs Anda.
+File ini digunakan terutama agar situs Anda terhindar dari beban permintaan yang terlampau banyak
+contohnya halaman web, menghindari halaman yang mirip pada situs kita
+file media, supaya gambar,audio kita ga muncul pada saat penelusuran google
+
+lalu ke src ada index.js juga
+di dalamnya terdapat document.getelementbyId root
+ini adalah satu script yg memanipulasi DOM(document object model)
+apa itu DOM ? 
+Objek dokumen merupakan model dokumen HTML yang berisi kumpulan fungsi serta atribut 
+berupa objek berdasarkan elemen pada sebuah HTML.
+jadi dengan kata lain, DOM adalah object yang digunakan untuk menampilkan dokumen html
+contoh penggunaan dom?
+
+var items = document.getElementsByClassName(‘list-items’);
+getElementByClassName() adalah method yang bisa menghasilkan lebih dari satu objek.
+ Dari sini Anda akan memperoleh seluruh item dengan kelas list-item lalu menyimpannya ke dalam variabel.
+
+jadi pada sebuah react itu, kita akan memiliki sebuah DOM yang dijalankan pada RAM 
+DOM yang terdapat pada RAM kita ini disebut sebagai Virtual DOM 
+jadi apa bila terdapat perubahan terhadap DOM kita, 
+maka yang sebenernya terjadi
+yang berubah adalah virtual DOM kita terlebih dahulu 
+sehingga proses load pada aplikasi kita berjalan lebih cepat 
+tanpa mengakses DOM kita yang berada pada storage 
+
+sehingga apa bila terjadi perngubahan, misal di element a 
+maka yang dicocokan terhadap dom asli kita, hanya di element itu saja
+sehingga performance pada server kita tetap terjaga
+
+pernah mendengar flickering website? 
+masalah yang terjadi di mobile, pada penggunaan html murni tanpa framework
+karena memiliki spec yg lebih rendah dr pc 
+website tersebut loading sekali dan mengganti konten web kita
+
+apa menggunakan react, terbebas dr flickering?
+belum tentu, tetapi apa bila terjadi flickering 
+maka flickering tersebut tidak terjadi pada seluruh document
+tetapi biasanya hanya pada element yg berubah saja
+
+downsidenya apa? penggunaan ram lebih besar, total file jg lebih besar
+tetapi kelebihannya, si user yg mengakses aplikasi kita akan jauh lebih smooth
+karena si virtual dom yang menyimpan perubahan ini
+
+untuk apa mengakses id root disini?
+untuk memanggil method bernama render yg berasal dari react DOM. 
+dan ada sebuah tag App yaitu dia memanggil App.js, tau darimana? karena kita mengimport 
+
+di dalam app.js ini dia seakan2 mengirimkan sebuah html
+tapi bukan html, melainkan sebuah jsx atau javascript XML. 
+guna jsx adalah memperbolehkan kita menulis sebuah html dalam sebuah javascript
+
+jadi kita punya sebuah index.js 
+yang me-load sebuah app.js 
+dan dalam app.js memiliki sebuah function untuk me-return sebuah javascript
+
+gimana cara kita menjalan project kita?
+kita bisa menggunakan npm start
+
+dengan npm start, kita menjalankan development server kita
+bisa diakses pada network yang sama dan secara localhost juga
+
+app.css tentunya untuk mengakses css kita
+perbedaannya apa dengan css yg kita pelajari sebelumnya?
+untuk load css, kita tidak menggunakan link lagi 
+tetapi menggunakan import 
+
